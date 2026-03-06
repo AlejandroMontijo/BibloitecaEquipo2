@@ -1,0 +1,25 @@
+# Archivos construidos por Maven
+target/
+*.class
+
+# Entorno de Java
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Archivos específicos de NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Archivos de MacOS
+.DS_Store
+
+# Archivos temporales
+*.log
