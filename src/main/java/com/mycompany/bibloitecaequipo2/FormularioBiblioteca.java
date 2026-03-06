@@ -27,6 +27,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FormularioBiblioteca extends JFrame {
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     // Componentes del formulario
     private JTextField txtIsbn;
     private JTextField txtTitulo;
@@ -42,6 +43,8 @@ public class FormularioBiblioteca extends JFrame {
 
     // Tabla
     private JTable tablaLibros;
+    private javax.swing.JScrollPane jScrollPane1;
+    // End of variables declaration//GEN-END:variables
     private DefaultTableModel modeloTabla;
 
     // Datos y archivos
@@ -54,6 +57,15 @@ public class FormularioBiblioteca extends JFrame {
         gestorArchivos = new GestorArchivosNIO("libros_biblioteca.txt");
 
         // configurar ventana principal
+        initComponents();
+
+        // cargar datos del archivo txt
+        cargarDatosFichero();
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
         setTitle("Registro de Libros de Biblioteca");
         setSize(800, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,10 +77,7 @@ public class FormularioBiblioteca extends JFrame {
         crearPanelLateral();
         crearPanelCentral();
         crearPanelInferior();
-
-        // cargar datos del archivo txt
-        cargarDatosFichero();
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     private void crearMenu() {
         JMenuBar bar = new JMenuBar();
@@ -183,8 +192,8 @@ public class FormularioBiblioteca extends JFrame {
         };
 
         tablaLibros = new JTable(modeloTabla);
-        JScrollPane scroll = new JScrollPane(tablaLibros);
-        panelInferior.add(scroll, BorderLayout.CENTER);
+        jScrollPane1 = new JScrollPane(tablaLibros);
+        panelInferior.add(jScrollPane1, BorderLayout.CENTER);
 
         // para que tome la mitad inferior de la ventana, usamos preferredSize
         panelInferior.setPreferredSize(new java.awt.Dimension(800, 200));
