@@ -28,22 +28,29 @@ import javax.swing.table.DefaultTableModel;
 public class FormularioBiblioteca extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    // Componentes del formulario
-    private JTextField txtIsbn;
-    private JTextField txtTitulo;
-    private JTextField txtAutor;
-    private JTextField txtEditorial;
-    private JTextField txtAnio;
-
-    // Botones
-    private JButton btnNuevo;
-    private JButton btnGuardar;
-    private JButton btnModificar;
-    private JButton btnEliminar;
-
-    // Tabla
-    private JTable tablaLibros;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnNuevo;
+    private javax.swing.JMenuItem itemSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenu menuArchivo;
+    private javax.swing.JPanel panelCentral;
+    private javax.swing.JPanel panelFormulario;
+    private javax.swing.JPanel panelInferior;
+    private javax.swing.JPanel panelIzquierdo;
+    private javax.swing.JTable tablaLibros;
+    private javax.swing.JTextField txtAnio;
+    private javax.swing.JTextField txtAutor;
+    private javax.swing.JTextField txtEditorial;
+    private javax.swing.JTextField txtIsbn;
+    private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
     private DefaultTableModel modeloTabla;
 
@@ -59,160 +66,193 @@ public class FormularioBiblioteca extends JFrame {
         // configurar ventana principal
         initComponents();
 
+        // Inicializar modelo de la tabla DENTRO del constructor
+        modeloTabla = (DefaultTableModel) tablaLibros.getModel();
+
         // cargar datos del archivo txt
         cargarDatosFichero();
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        panelIzquierdo = new javax.swing.JPanel();
+        btnNuevo = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        panelCentral = new javax.swing.JPanel();
+        panelFormulario = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtIsbn = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtTitulo = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtAutor = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtEditorial = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtAnio = new javax.swing.JTextField();
+        panelInferior = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaLibros = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menuArchivo = new javax.swing.JMenu();
+        itemSalir = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registro de Libros de Biblioteca");
-        setSize(800, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setLayout(new BorderLayout(10, 10));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+        getContentPane().setLayout(new java.awt.BorderLayout(10, 10));
 
-        // iniciar componentes visuales
-        crearMenu();
-        crearPanelLateral();
-        crearPanelCentral();
-        crearPanelInferior();
-    }// </editor-fold>//GEN-END:initComponents
+        panelIzquierdo.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panelIzquierdo.setLayout(new java.awt.GridLayout(4, 1, 10, 10));
 
-    private void crearMenu() {
-        JMenuBar bar = new JMenuBar();
-        JMenu menuArchivo = new JMenu("Archivo");
-        JMenuItem itemSalir = new JMenuItem("Salir");
-
-        itemSalir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
             }
         });
-
-        menuArchivo.add(itemSalir);
-        bar.add(menuArchivo);
-        setJMenuBar(bar);
-    }
-
-    private void crearPanelLateral() {
-        JPanel panelIzquierdo = new JPanel(new GridLayout(4, 1, 10, 10));
-        panelIzquierdo.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        btnNuevo = new JButton("Nuevo");
-        btnGuardar = new JButton("Guardar");
-        btnModificar = new JButton("Modificar");
-        btnEliminar = new JButton("Eliminar");
-
         panelIzquierdo.add(btnNuevo);
+
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
         panelIzquierdo.add(btnGuardar);
+
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
         panelIzquierdo.add(btnModificar);
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
         panelIzquierdo.add(btnEliminar);
 
-        add(panelIzquierdo, BorderLayout.WEST);
+        getContentPane().add(panelIzquierdo, java.awt.BorderLayout.WEST);
 
-        // agregar eventos a los botones
-        btnNuevo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                limpiarCampos();
-                txtIsbn.requestFocus();
-            }
-        });
+        panelCentral.setBorder(javax.swing.BorderFactory.createTitledBorder("Formulario de Libros"));
+        panelCentral.setLayout(new java.awt.BorderLayout());
 
-        btnGuardar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                guardarLibro();
-            }
-        });
+        panelFormulario.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 50, 10, 50));
+        panelFormulario.setLayout(new java.awt.GridLayout(5, 2, 5, 10));
 
-        btnModificar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                modificarLibro();
-            }
-        });
-
-        btnEliminar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                eliminarLibro();
-            }
-        });
-    }
-
-    private void crearPanelCentral() {
-        JPanel panelCentral = new JPanel(new BorderLayout());
-        panelCentral.setBorder(BorderFactory.createTitledBorder("Formulario de Libros"));
-
-        JPanel panelFormulario = new JPanel(new GridLayout(5, 2, 5, 10));
-        panelFormulario.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
-
-        panelFormulario.add(new JLabel("ISBN:"));
-        txtIsbn = new JTextField();
+        jLabel1.setText("ISBN:");
+        panelFormulario.add(jLabel1);
         panelFormulario.add(txtIsbn);
 
-        panelFormulario.add(new JLabel("Título:"));
-        txtTitulo = new JTextField();
+        jLabel2.setText("Título:");
+        panelFormulario.add(jLabel2);
         panelFormulario.add(txtTitulo);
 
-        panelFormulario.add(new JLabel("Autor:"));
-        txtAutor = new JTextField();
+        jLabel3.setText("Autor:");
+        panelFormulario.add(jLabel3);
         panelFormulario.add(txtAutor);
 
-        panelFormulario.add(new JLabel("Editorial:"));
-        txtEditorial = new JTextField();
+        jLabel4.setText("Editorial:");
+        panelFormulario.add(jLabel4);
         panelFormulario.add(txtEditorial);
 
-        panelFormulario.add(new JLabel("Año de publicación:"));
-        txtAnio = new JTextField();
+        jLabel5.setText("Año de publicación:");
+        panelFormulario.add(jLabel5);
         panelFormulario.add(txtAnio);
 
-        panelCentral.add(panelFormulario, BorderLayout.CENTER);
+        panelCentral.add(panelFormulario, java.awt.BorderLayout.CENTER);
 
-        // panel inferior dentro del formulario para botones extra si es necesario
-        // se puede asimilar al moackup
+        getContentPane().add(panelCentral, java.awt.BorderLayout.CENTER);
 
-        add(panelCentral, BorderLayout.CENTER);
-    }
-
-    private void crearPanelInferior() {
-        JPanel panelInferior = new JPanel(new BorderLayout());
-        panelInferior.setBorder(BorderFactory.createTitledBorder("Listado de Libros"));
-
-        // columnas
-        String[] columnas = { "ISBN", "Título", "Autor", "Editorial", "Año de publicación" };
-        modeloTabla = new DefaultTableModel(columnas, 0) {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false; // que no se pueda editar directamente la tabla
-            }
-        };
-
-        tablaLibros = new JTable(modeloTabla);
-        jScrollPane1 = new JScrollPane(tablaLibros);
-        panelInferior.add(jScrollPane1, BorderLayout.CENTER);
-
-        // para que tome la mitad inferior de la ventana, usamos preferredSize
+        panelInferior.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de Libros"));
         panelInferior.setPreferredSize(new java.awt.Dimension(800, 200));
+        panelInferior.setLayout(new java.awt.BorderLayout());
 
-        add(panelInferior, BorderLayout.SOUTH);
+        tablaLibros.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][] {
 
-        // Agregar listener para cuando seleccionan una fila
-        tablaLibros.getSelectionModel().addListSelectionListener(e -> {
-            if (e.getValueIsAdjusting() == false) {
-                int fila = tablaLibros.getSelectedRow();
-                if (fila >= 0) {
-                    txtIsbn.setText(modeloTabla.getValueAt(fila, 0).toString());
-                    txtTitulo.setText(modeloTabla.getValueAt(fila, 1).toString());
-                    txtAutor.setText(modeloTabla.getValueAt(fila, 2).toString());
-                    txtEditorial.setText(modeloTabla.getValueAt(fila, 3).toString());
-                    txtAnio.setText(modeloTabla.getValueAt(fila, 4).toString());
-                }
+                },
+                new String[] {
+                        "ISBN", "Título", "Autor", "Editorial", "Año de publicación"
+                }) {
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
             }
         });
+        tablaLibros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaLibrosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tablaLibros);
+
+        panelInferior.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(panelInferior, java.awt.BorderLayout.SOUTH);
+
+        menuArchivo.setText("Archivo");
+
+        itemSalir.setText("Salir");
+        itemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemSalirActionPerformed(evt);
+            }
+        });
+        menuArchivo.add(itemSalir);
+
+        jMenuBar1.add(menuArchivo);
+
+        setJMenuBar(jMenuBar1);
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {
+        limpiarCampos();
+        txtIsbn.requestFocus();
+    }
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {
+        guardarLibro();
+    }
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {
+        modificarLibro();
+    }
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {
+        eliminarLibro();
+    }
+
+    private void tablaLibrosMouseClicked(java.awt.event.MouseEvent evt) {
+        int fila = tablaLibros.getSelectedRow();
+        if (fila >= 0) {
+            txtIsbn.setText(modeloTabla.getValueAt(fila, 0).toString());
+            txtTitulo.setText(modeloTabla.getValueAt(fila, 1).toString());
+            txtAutor.setText(modeloTabla.getValueAt(fila, 2).toString());
+            txtEditorial.setText(modeloTabla.getValueAt(fila, 3).toString());
+            txtAnio.setText(modeloTabla.getValueAt(fila, 4).toString());
+        }
+    }
+
+    private void itemSalirActionPerformed(java.awt.event.ActionEvent evt) {
+        System.exit(0);
     }
 
     private void limpiarCampos() {
