@@ -1,5 +1,5 @@
-978-3-16-148410-0,El Señor de los Anillos,J.R.R. Tolkien,Minotauro,1954
-978-84-376-0494-7,Cien Años de Soledad,Gabriel Garcia Marquez,Sudamericana,1967
-978-0-7475-3269-9,Harry Potter y la Piedra Filosofal,J.K. Rowling,Bloomsbury,1997
-978-0-452-28423-4,1984,George Orwell,Secker and Warburg,1949
-978-0-14-118247-5,Un Mundo Feliz,Aldous Huxley,Chatto & Windus,1932
+978-0-13-468599-1,Effective Java,Joshua Bloch,Addison-Wesley,2017
+978-0-201-63361-0,Design Patterns,Erich Gamma,Addison-Wesley,1994
+978-0-13-235088-4,Clean Code,Robert C. Martin,Prentice Hall,2008
+978-0-596-00712-6,Head First Design Patterns,Eric Freeman,O'Reilly,2004
+978-1-4919-5035-7,Building Microservices,Sam Newman,O'Reilly,2021

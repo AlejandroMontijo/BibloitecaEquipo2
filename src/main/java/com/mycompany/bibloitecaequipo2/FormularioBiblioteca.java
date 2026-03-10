@@ -337,12 +337,22 @@ public class FormularioBiblioteca extends JFrame {
 
         try {
             int anio = Integer.parseInt(txtAnio.getText());
+            String nuevoIsbn = txtIsbn.getText();
 
             // Obtenemos el libro
             Libro libroSeleccionado = listaLibros.get(filaSelec);
 
+            // comprobar que no exista otro libro con el mismo isbn
+            for (int i = 0; i < listaLibros.size(); i++) {
+                if (i != filaSelec && listaLibros.get(i).getIsbn().equals(nuevoIsbn)) {
+                    JOptionPane.showMessageDialog(this, "Ya existe otro libro con este ISBN", "Error",
+                            JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+            }
+
             // Actualizamos los datos
-            libroSeleccionado.setIsbn(txtIsbn.getText());
+            libroSeleccionado.setIsbn(nuevoIsbn);
             libroSeleccionado.setTitulo(txtTitulo.getText());
             libroSeleccionado.setAutor(txtAutor.getText());
             libroSeleccionado.setEditorial(txtEditorial.getText());
